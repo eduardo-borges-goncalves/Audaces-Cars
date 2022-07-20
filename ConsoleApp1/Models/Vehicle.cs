@@ -15,7 +15,7 @@ namespace ConsoleApp1.Models
         public double Value { get; set; }
         public string Cpf { get; set; }
         public string Color { get; set; }
-        public int Store { get; set; }
+        public string Status { get; set; }
 
         Random randNum = new Random();
         public Vehicle (
@@ -35,15 +35,12 @@ namespace ConsoleApp1.Models
             this.Cpf = cpf;
             this.Color = color;
             this.Store = 0;
-        }
-        public void BuyVehicle (int value)
-        {
-            this.Store += value;
+            this.Status = "disponível"
         }
 
         public void SellVehicle (int value)
         {
-            this.Store -= value;
+            this.Status = "vendido"
         }
 
         public void ListData ()
