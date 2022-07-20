@@ -20,7 +20,9 @@ namespace ConsoleApp1.Models
         {
             list.ForEach((car) =>
             {
+                int index = list.FindIndex(item => item.id == car.id);
                 Console.WriteLine("\n");
+                Console.WriteLine(index);
                 car.showInformation();
             });
         }
