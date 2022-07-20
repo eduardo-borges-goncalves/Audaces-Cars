@@ -10,7 +10,16 @@ namespace ConsoleApp1.Models{
         public int Wheels { get; set; }
         public string Power { get; set;  }
 
-        public Moto (int wheels, string power) {
+        public Moto (
+            DateOnly manufacturingDate,
+            string name,
+            string licensePlate,
+            double value,
+            string color,
+            int wheels, 
+            string power
+            ) : base(manufacturingDate, name, licensePlate, value, color)
+        {
             Wheels = wheels; 
             Power = power; 
         }

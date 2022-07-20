@@ -7,25 +7,32 @@ using System.Threading.Tasks;
 namespace ConsoleApp1.Models{
     public class Car : Vehicle
     {
-        enum Fuel {
-            gasolina, 
-            diesel
-        };
 
         public int Doors { get; set; }
-        public Fuel Fuel { get; set; }
+        public string Fuel { get; set; }
         public string Power { get; set; }
 
-        public Car (int doors, Fuel fuel, string power) {
+        public Car (
+            DateOnly manufacturingDate,
+            string name,
+            string licensePlate,
+            double value,
+            string color,
+            int doors, 
+            string fuel,
+            string power
+            ) : base(manufacturingDate, name, licensePlate, value, color)
+        {
             Doors = doors; 
             Fuel = fuel; 
-            power = power; 
+            Power = power; 
         }
 
         public void showInformation () {
-            Console.WriteLine($"Portas {Doors}");
-            Console.WriteLine($"Combustível {Fuel}");
-            Console.WriteLine($"Potência {Power} cavalos");
+            base.ListData();
+            Console.WriteLine($"Portas: {Doors}");
+            Console.WriteLine($"Combustível: {Fuel}");
+            Console.WriteLine($"Potência: {Power} cavalos");
         }
     }
 }

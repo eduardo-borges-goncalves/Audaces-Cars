@@ -1,12 +1,36 @@
 ﻿using ConsoleApp1.Models;
+using ConsoleApp1.Services;
 
+var optionSelected = "s";
+do
+{
+    Menu.firstMenu();
 
-var date = new DateOnly(2022, 01, 05);
+    optionSelected = Console.ReadKey().KeyChar.ToString().ToUpper();
 
-var firstVehicle = new Vehicle(date, "Honda", "NKC2864", 134000, "01101101101101", "White");
+    switch (optionSelected)
+    {
+        case "1":
+            RegisterVehicle.chooseVehicle();
+            break;
+        case "2":
+            Console.WriteLine("opção 2");
+            break;    
+        case "3":
+            Console.WriteLine("opção 3");
+            break;    
+        case "4":
+            Console.WriteLine("opção 4");
+            break;    
+        case "S":
+            Console.WriteLine("opção S");
+            break;
+        default:
+            Console.WriteLine("Opção inválida");
+            break;
+    }
+} while (optionSelected != "S");
 
-firstVehicle.BuyVehicle(7);
-firstVehicle.ListData();
 
 
 // lista de carros
@@ -19,20 +43,17 @@ firstVehicle.ListData();
 // lista de carros vendidos
 
 // Menu
-// 1 - cadastrar veículo 
-    // 1 Carro
-    // 2 Moto ou Triciclo
-    // 3 Caminhonete 
+
 // 2 - vender veículo 
-    // lista menu com o índice dos carros, 
-    // if ela digitar um valor entre 0 e cars.length. venda o veículo. 
-    // else opção inválida 
-    // var opcaoDigitada = parseInt(Console.ReadLine())
-    // digite o cpf do comprador:
-    // digite o valor da venda:
-    // date = Date.now()
-    // cars[opcaoDigitada].sellVehicle(cpf, date, valor )
-    
+// lista menu com o índice dos carros, 
+// if ela digitar um valor entre 0 e cars.length. venda o veículo. 
+// else opção inválida 
+// var opcaoDigitada = parseInt(Console.ReadLine())
+// digite o cpf do comprador:
+// digite o valor da venda:
+// date = Date.now()
+// cars[opcaoDigitada].sellVehicle(cpf, date, valor )
+
 // 3 - listar veículo 
 // 4 - veículos disponíveis 
 // 5 - veículos vendidos 

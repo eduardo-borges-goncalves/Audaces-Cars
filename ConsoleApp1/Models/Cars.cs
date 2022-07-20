@@ -4,17 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1.Models{
-    public class Cars 
+namespace ConsoleApp1.Models
+{
+    static class Cars
     {
-        List<Car> cars = new List<Car>();
 
-        public void addCar (Car car) {
-            cars.add(car);
+        static List<Car> list = new List<Car>();
+
+        static public void addCar(Car car)
+        {
+            list.Add(car);
         }
 
-        public List<Car> getCars () {
-            cars.foreach(car => Console.WriteLine(car));
+        static public void getCars()
+        {
+            list.ForEach((car) =>
+            {
+                Console.WriteLine("\n");
+                car.showInformation();
+            });
         }
     }
+
 }

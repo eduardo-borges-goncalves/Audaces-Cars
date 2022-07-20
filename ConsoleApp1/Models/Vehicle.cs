@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Models
 {
-    public class Vehicle
+    public abstract class Vehicle
     {
         public int Chassis { get; set; }
         public DateOnly ManufacturingDate { get; set; }
@@ -23,7 +23,6 @@ namespace ConsoleApp1.Models
             string name, 
             string licensePlate, 
             double value, 
-            string cpf, 
             string color
             )
         {
@@ -32,24 +31,23 @@ namespace ConsoleApp1.Models
             this.Name = name;
             this.LicensePlate = licensePlate;
             this.Value = value;
-            this.Cpf = cpf;
+            this.Cpf = "0";
             this.Color = color;
-            this.Store = 0;
-            this.Status = "disponível"
+            this.Status = "disponível";
         }
 
-        public void SellVehicle (int value)
+        public virtual void SellVehicle (int value)
         {
-            this.Status = "vendido"
+            this.Status = "vendido";
         }
 
-        public void ListData ()
+        public virtual void ListData ()
         {
             Console.WriteLine($"Modelo: {Name}");
             Console.WriteLine($"Chassi: {Chassis}");
             Console.WriteLine($"Placa: {LicensePlate}");
             Console.WriteLine($"Valor: R$ {Value:F2}");
-            Console.WriteLine($"Estoque: {Store}");
+            Console.WriteLine($"Status: {Status}");
         }
 
         public void SetColor (string color)
