@@ -1,15 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ConsoleApp1.Data;
 
 namespace ConsoleApp1.Models{
+
+    public enum Fuel
+    {
+        flex = 1, 
+        gasolina = 2
+    }   
+
     public class Car : Vehicle
     {
 
         public int Doors { get; set; }
-        public string Fuel { get; set; }
+        public Fuel Fuel { get; set; }
         public string Power { get; set; }
 
         public Car (
@@ -19,7 +22,7 @@ namespace ConsoleApp1.Models{
             double value,
             string color,
             int doors, 
-            string fuel,
+            Fuel fuel,
             string power
             ) : base(manufacturingDate, name, licensePlate, value, color)
         {
@@ -28,11 +31,17 @@ namespace ConsoleApp1.Models{
             Power = power; 
         }
 
-        public void showInformation () {
+        public void ShowInformation () {
             base.ListData();
             Console.WriteLine($"Portas: {Doors}");
             Console.WriteLine($"Combustível: {Fuel}");
             Console.WriteLine($"Potência: {Power} cavalos");
+        }
+
+        public override void SellVehicle(string cpf)
+        {
+            base.SellVehicle(cpf);
+            Cars.SellCar(this);
         }
     }
 }

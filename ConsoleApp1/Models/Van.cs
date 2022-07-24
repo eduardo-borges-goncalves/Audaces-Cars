@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ConsoleApp1.Data;
 
 namespace ConsoleApp1.Models
 {
+    public enum FuelVan
+    {
+        diesel = 1,
+        gasolina = 2
+    }
     public class Van : Vehicle
     {
         public int Doors { get; set; }
         public int BucketCapacity { get; set; }
         public string Power { get; set; }
-        public string Fuel { get; set; }
+        public FuelVan Fuel { get; set; }
 
-        static string colorVan = "roxo";
+        static string ColorVan = "roxo";
 
         public Van (
             DateOnly manufacturingDate,
@@ -21,10 +22,10 @@ namespace ConsoleApp1.Models
             string licensePlate,
             double value,
             int doors,
-            int bucketCapacity, 
-            string fuel,
+            int bucketCapacity,
+            FuelVan fuel,
             string power
-            ) : base(manufacturingDate, name, licensePlate, value, colorVan)
+            ) : base(manufacturingDate, name, licensePlate, value, ColorVan)
         {
             Doors = doors;
             BucketCapacity = bucketCapacity;
@@ -32,13 +33,19 @@ namespace ConsoleApp1.Models
             Fuel = fuel;
         }
 
-        public void showInformation ()
+        public void ShowInformation ()
         {
             base.ListData();
             Console.WriteLine($"Portas: {Doors}");
             Console.WriteLine($"Capacidade da Caçamba: {BucketCapacity} litros");
             Console.WriteLine($"Potência: {Power} cavalos");
             Console.WriteLine($"Combustível: {Fuel}");
+        }
+
+        public override void SellVehicle(string cpf)
+        {
+            base.SellVehicle(cpf);
+            Vans.SellVan(this);
         }
     }
 }

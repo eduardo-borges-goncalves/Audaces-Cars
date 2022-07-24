@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
+
+
 
 namespace ConsoleApp1.Models
 {
@@ -18,11 +16,11 @@ namespace ConsoleApp1.Models
         public string Status { get; set; }
 
         Random randNum = new Random();
-        public Vehicle (
+        public Vehicle(
             DateOnly manufacturingDate,
-            string name, 
-            string licensePlate, 
-            double value, 
+            string name,
+            string licensePlate,
+            double value,
             string color
             )
         {
@@ -33,29 +31,32 @@ namespace ConsoleApp1.Models
             this.Value = value;
             this.Cpf = "0";
             this.Color = color;
-            this.Status = "disponível";
+            this.Status = "disponivel";
         }
 
-        public virtual void SellVehicle (int value)
+        public virtual void SellVehicle(string cpf)
         {
+            this.Cpf = cpf;
             this.Status = "vendido";
         }
 
-        public virtual void ListData ()
+        public virtual void ListData()
         {
             Console.WriteLine($"Modelo: {Name}");
-            Console.WriteLine($"Chassi: {Chassis}");
-            Console.WriteLine($"Placa: {LicensePlate}");
-            Console.WriteLine($"Valor: R$ {Value:F2}");
+            Console.WriteLine($"Cor: {Color}");
+            Console.WriteLine($"Valor: {Value.ToString("C", CultureInfo.CurrentCulture)}");
             Console.WriteLine($"Status: {Status}");
+            Console.WriteLine($"Placa: {LicensePlate}");
+            Console.WriteLine($"Chassi: {Chassis}");
+            Console.WriteLine($"Data de Fabricação: {ManufacturingDate}");
         }
 
-        public void SetColor (string color)
+        public void UpdateColor(string color)
         {
             this.Color = color;
         }
 
-        public void SetValue (int value)
+        public void UpdateValue(int value)
         {
             this.Value = value;
         }

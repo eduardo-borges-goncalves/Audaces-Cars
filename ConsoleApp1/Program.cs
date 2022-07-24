@@ -1,26 +1,45 @@
-﻿using ConsoleApp1.Models;
+﻿using ConsoleApp1.Data;
 using ConsoleApp1.Services;
+using ConsoleApp1.Services.Factories;
+using ConsoleApp1.Services.Menus;
+using ConsoleApp1.Services.Update;
+
+FactoryVehicle.Car();
+FactoryVehicle.Car();
+FactoryVehicle.Car();
+FactoryVehicle.Moto();
+FactoryVehicle.Moto();
+FactoryVehicle.Van();
 
 var optionSelected = "s";
+Console.WriteLine("Seja bem vindo ao DevInCar!");
+
 do
 {
-    Menu.firstMenu();
+    Menu.FirstMenu();
 
     optionSelected = Console.ReadKey().KeyChar.ToString().ToUpper();
 
     switch (optionSelected)
     {
         case "1":
-            RegisterVehicle.chooseVehicle();
+            RegisterVehicle.ChooseVehicle();
             break;
         case "2":
-            Console.WriteLine("opção 2");
+            SellVehicle.ChooseVehicle();
             break;    
         case "3":
-            Console.WriteLine("opção 3");
-            break;    
+            ListVehicles.ChooseAvailability();
+            break;
         case "4":
-            Console.WriteLine("opção 4");
+            BestSale.get();
+            LowPriceSale.get();
+            break;
+        case "5":
+            Transactions.GetTransactions();
+            break;  
+        case "6":
+            UpdateVehicle.ChooseUpdate();
             break;    
         case "S":
             Console.WriteLine("opção S");
@@ -31,44 +50,4 @@ do
     }
 } while (optionSelected != "S");
 
-
-
-// lista de carros
-// lista de motos 
-// lista de triciclos
-// lista de camionetes
-// lista de veículos 
-// lista de vendas
-
-// lista de carros vendidos
-
-// Menu
-
-// 2 - vender veículo 
-// lista menu com o índice dos carros, 
-// if ela digitar um valor entre 0 e cars.length. venda o veículo. 
-// else opção inválida 
-// var opcaoDigitada = parseInt(Console.ReadLine())
-// digite o cpf do comprador:
-// digite o valor da venda:
-// date = Date.now()
-// cars[opcaoDigitada].sellVehicle(cpf, date, valor )
-
-// 3 - listar veículo 
-// 4 - veículos disponíveis 
-// 5 - veículos vendidos 
-
-// Services
-// Cadastrar carro -> cadastra o carro e adiciona na lista de carros 
-// Criar moto 
-// Criar triciclo
-// Criar caminhonete 
-// Vender carro -> vende e adiciona na lista de carros vendidos 
-
-// Venda 
-// Veículo 
-// CPF comprador 
-// Valor 
-// Data
-
-
+// enunms numero de rodas moto 
