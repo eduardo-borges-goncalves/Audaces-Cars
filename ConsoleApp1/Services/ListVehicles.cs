@@ -46,14 +46,17 @@ namespace ConsoleApp1.Services
                     case '1':
                         Console.WriteLine("\n\nLista de Carros:\n");
                         Cars.GetCars();
+                        invalid = false;
                         break;
                     case '2':
                         Console.WriteLine("\n\nLista de Motos:\n");
                         Motos.GetMotos();
+                        invalid = false;
                         break;
                     case '3':
                         Console.WriteLine("\n\nLista de Camionetes:\n");
                         Vans.GetVans();
+                        invalid = false;
                         break;
                     case '4':
                         Console.WriteLine("\n\nLista com todos os veículos:");
@@ -63,6 +66,7 @@ namespace ConsoleApp1.Services
                         Motos.GetMotos();
                         Console.WriteLine("\nCamionetes:");
                         Vans.GetVans();
+                        invalid = false;
                         break;
                     default:
                         invalid = true;
@@ -84,14 +88,17 @@ namespace ConsoleApp1.Services
                     case '1':
                         Console.WriteLine("\n\nLista de Carros:\n");
                         Cars.GetAvailableCars();
+                        invalid = false;
                         break;
                     case '2':
                         Console.WriteLine("\n\nLista de Motos:\n");
                         Motos.GetAvailableMotos();
+                        invalid = false;
                         break;
                     case '3':
                         Console.WriteLine("\n\nLista de Camionetes:\n");
                         Vans.GetAvailableVans();
+                        invalid = false;
                         break;
                     default:
                         invalid = true;
@@ -113,14 +120,17 @@ namespace ConsoleApp1.Services
                     case '1':
                         Console.WriteLine("\n\nLista de Carros:\n");
                         Cars.GetSelledCars();
+                        invalid = false;
                         break;
                     case '2':
                         Console.WriteLine("\n\nLista de Motos:\n");
                         Motos.GetSelledMotos();
+                        invalid = false;
                         break;
                     case '3':
                         Console.WriteLine("\n\nLista de Camionetes:\n");
                         Vans.GetSelledVans();
+                        invalid = false;
                         break;
                     default:
                         invalid = true;

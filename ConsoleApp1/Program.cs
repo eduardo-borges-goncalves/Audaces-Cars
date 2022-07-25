@@ -4,9 +4,9 @@ using ConsoleApp1.Services.Factories;
 using ConsoleApp1.Services.Menus;
 using ConsoleApp1.Services.Update;
 
-FactoryVehicle.Car();
-FactoryVehicle.Car();
-FactoryVehicle.Car();
+FactoryVehicle.Car("honda", "HUIU8975");
+FactoryVehicle.Car("toyota", "NPJ5J687");
+FactoryVehicle.Car("HB20", "HUI9030");
 FactoryVehicle.Moto();
 FactoryVehicle.Moto();
 FactoryVehicle.Van();
@@ -50,4 +50,4 @@ do
     }
 } while (optionSelected != "S");
 
-// enunms numero de rodas moto 
+// tratamento de exceção criar veículo int e strings 

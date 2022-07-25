@@ -7,26 +7,27 @@ namespace ConsoleApp1.Services.Choose
     {
         public static Car Car()
         {
-            int option;
-            while (true)
+            var validOption = false;
+            int option = 0;
+            while (!validOption)
             {
-                Console.WriteLine("\nEscolha uma opção: ");
-                Cars.GetAvailableCars();
-                option = int.Parse(Console.ReadLine());
-                Console.WriteLine($"{option}");
+                try
+                {
+                    Console.WriteLine("\nEscolha uma opção: ");
+                    Cars.GetAvailableCars();
+                    option = int.Parse(Console.ReadLine());
+                    Console.WriteLine($"{option}");
 
-                if (option > Cars.list.Count - 1 || option < 0)
+                    validOption = true;
+                    return Cars.list[option];
+                } 
+                catch (Exception)
                 {
+                    validOption = false;
                     Console.WriteLine("\nOpção inválida");
                 }
-                else if (Cars.list[option].Status != "disponivel")
-                {
-                    Console.WriteLine("\nOpção inválida");
-                }
-                else break;
             }
             return Cars.list[option];
         }
-
     }
 }

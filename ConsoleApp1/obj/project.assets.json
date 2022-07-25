@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eduardo\\Desktop\\Audaces-Cars\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "C:\\Users\\eduardo\\Desktop\\Audaces-Dev-In-Car\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "C:\\Users\\eduardo\\Desktop\\Audaces-Cars\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectPath": "C:\\Users\\eduardo\\Desktop\\Audaces-Dev-In-Car\\ConsoleApp1\\ConsoleApp1.csproj",
       "packagesPath": "C:\\Users\\eduardo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eduardo\\Desktop\\Audaces-Cars\\ConsoleApp1\\obj\\",
+      "outputPath": "C:\\Users\\eduardo\\Desktop\\Audaces-Dev-In-Car\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\eduardo\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,7 +1,5 @@
 ﻿using System.Globalization;
 
-
-
 namespace ConsoleApp1.Models
 {
     public abstract class Vehicle

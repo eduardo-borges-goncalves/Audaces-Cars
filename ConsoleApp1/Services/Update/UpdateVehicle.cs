@@ -28,7 +28,7 @@ namespace ConsoleApp1.Services.Update
         {
             while (true)
             {
-                Menu.Vehicle();
+                Menu.VehicleColor();
                 var option = Console.ReadKey().KeyChar;
 
                 switch (option)
@@ -40,10 +40,6 @@ namespace ConsoleApp1.Services.Update
                     case '2':
                         if (IsAvailable.Moto())
                             UpdateColor.Moto();
-                        break;
-                    case '3':
-                        if (IsAvailable.Van())
-                            UpdateColor.Van();
                         break;
                     default:
                         Console.WriteLine("\nOpção inválida");

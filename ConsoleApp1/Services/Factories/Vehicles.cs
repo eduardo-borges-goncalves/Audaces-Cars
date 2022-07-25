@@ -5,16 +5,16 @@ namespace ConsoleApp1.Services.Factories
 {
     static public class FactoryVehicle
     {
-        public static void Car()
+        public static void Car(string nome, string placa)
         {
             Car honda = new Car(
                 new DateOnly(2022, 05, 06),
-                "honda", 
-                "npj7898",
+                nome, 
+                placa,
                 134567,
                 "white",
                 4,
-                Enum.Parse<Fuel>("1"),
+                Fuel.gasolina,
                 "104");
             Cars.AddCar(honda);
         }
@@ -34,7 +34,7 @@ namespace ConsoleApp1.Services.Factories
                 334567, 
                 4,
                 560,
-                Enum.Parse<FuelVan>("1"),
+                FuelVan.diesel,
                 "104");
             Vans.AddVan(hilux);
         }

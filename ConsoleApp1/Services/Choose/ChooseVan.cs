@@ -7,26 +7,28 @@ namespace ConsoleApp1.Services.Choose
     {
         public static Van Van()
         {
-            int option;
-            while (true)
+            var validOption = false;
+            int option = 0;
+            while (!validOption)
             {
-                Console.WriteLine("\nEscolha uma opção: ");
-                Vans.GetAvailableVans();
-                option = int.Parse(Console.ReadLine());
-                Console.WriteLine($"{option}");
+                try
+                {
+                    Console.WriteLine("\nEscolha uma opção: ");
+                    Vans.GetAvailableVans();
+                    option = int.Parse(Console.ReadLine());
+                    Console.WriteLine($"{option}");
 
-                if (option > Vans.list.Count - 1 || option < 0)
-                {
-                    Console.WriteLine("\nOpção inválida");
+                    validOption = true;
+                    return Vans.list[option];
                 }
-                else if (Vans.list[option].Status != "disponivel")
+                catch (Exception)
                 {
+                    validOption = false;
                     Console.WriteLine("\nOpção inválida");
+
                 }
-                else break;
             }
             return Vans.list[option];
         }
-
     }
 }

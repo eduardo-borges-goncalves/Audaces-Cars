@@ -24,15 +24,5 @@ namespace ConsoleApp1.Services.Update
             Console.WriteLine("\nCor da moto atualizada com sucesso:\n");
             moto.ListData();
         }
-        public static void Van()
-        {
-            var van = ChooseVan.Van();
-            Console.WriteLine("Insira a nova cor do veículo:");
-            var color = Console.ReadLine();
-
-            van.UpdateColor(color);
-            Console.WriteLine("\nCor da camionete atualizada com sucesso:\n");
-            van.ListData();
-        }
     }
 }

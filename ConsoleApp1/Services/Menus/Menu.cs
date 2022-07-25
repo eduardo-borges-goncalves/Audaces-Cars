@@ -21,6 +21,11 @@ namespace ConsoleApp1.Services.Menus
             Console.WriteLine("\n\n1 - Carro");
             Console.WriteLine("2 - Moto ou Triciclo");
             Console.WriteLine("3 - Camionete\n");
+        } 
+        static public void VehicleColor()
+        {
+            Console.WriteLine("\n\n1 - Carro");
+            Console.WriteLine("2 - Moto ou Triciclo");
         }
         static public void ListVehicle()
         {
